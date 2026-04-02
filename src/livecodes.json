@@ -1,0 +1,32 @@
+{
+  "title": "Islam The pahala",
+  "description": "",
+  "head": "<meta charset=\"UTF-8\" />\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+  "htmlAttrs": "lang=\"en\" class=\"\"",
+  "tags": [],
+  "activeEditor": "markup",
+  "markup": {
+    "language": "html",
+    "content": "<!DOCTYPE html>\r\n<html lang=\"ms\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Game Cari Pahala Terkumpul</title>\r\n    <link rel=\"stylesheet\" href=\"style.css\">\r\n</head>\r\n<body>\r\n\r\n    <div class=\"game-container\">\r\n        <div class=\"header\">\r\n            <h1>✨ Kutip Pahala ✨</h1>\r\n            <div class=\"score-board\">Total Pahala: <span id=\"score\">0</span></div>\r\n        </div>\r\n\r\n        <div id=\"game-area\">\r\n            </div>\r\n        \r\n        <div class=\"legend\">\r\n            <span class=\"tag zikir\">📿 Zikir (+10)</span>\r\n            <span class=\"tag solat\">🕋 Solat (+100)</span>\r\n            <span class=\"tag rare\">📖 Ibadah Besar (+200-400)</span>\r\n        </div>\r\n        <button id=\"reset-btn\">Reset Pahala</button>\r\n    </div>\r\n\r\n    <script src=\"script.js\"></script>\r\n</body>\r\n</html>"
+  },
+  "style": {
+    "language": "css",
+    "content": "body {\r\n    margin: 0;\r\n    font-family: 'Poppins', sans-serif;\r\n    background-color: #f0fdf4;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 96vh;\r\n    overflow: hidden;\r\n}\r\n\r\n.game-container {\r\n    text-align: center;\r\n    width: 100%;\r\n    max-width: 800px;\r\n}\r\n\r\n.header {\r\n    background: white;\r\n    padding: 2px;\r\n    border-radius: 20px;\r\n    box-shadow: 0 10px 25px rgba(0,0,0,0.05);\r\n    margin-bottom: 15px;\r\n}\r\n\r\n.score-board {\r\n    font-size: 25px;\r\n    font-weight: bold;\r\n    color: #16a34a;\r\n}\r\n\r\n#game-area {\r\n    width: 100%;\r\n    height: 400px;\r\n    background: #ffffff;\r\n    border-radius: 23px;\r\n    position: relative;\r\n    border: 4px solid #bbf7d0;\r\n    box-shadow: inset 0 0 20px rgba(0,0,0,0.02);\r\n    cursor: pointer;\r\n}\r\n\r\n/* Gaya Asas Item */\r\n.item {\r\n    position: absolute;\r\n    padding: 12px 18px;\r\n    border-radius: 50px;\r\n    font-weight: bold;\r\n    color: white;\r\n    user-select: none;\r\n    cursor: pointer;\r\n    transition: transform 0.1s ease;\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 5px;\r\n}\r\n\r\n.item:active { transform: scale(0.8); }\r\n\r\n/* Warna Mengikut Kategori */\r\n.zikir { background: #4caf50; border: 2px solid #2e7d32; }\r\n\r\n.solat { background: #1b5e20; border: 2px solid #ffd700; }\r\n\r\n.rare { \r\n    background: linear-gradient(135deg, #8b5cf6, #d946ef); \r\n    border: 2px solid #fff;\r\n    box-shadow: 0 0 15px rgba(217, 70, 239, 0.5);\r\n    animation: pulse 1.5s infinite;\r\n}\r\n\r\n@keyframes pulse {\r\n    0% { transform: scale(1); }\r\n    50% { transform: scale(1.1); }\r\n    100% { transform: scale(1); }\r\n}\r\n\r\n.legend {\r\n    margin-top: 15px;\r\n    display: flex;\r\n    justify-content: center;\r\n    gap: 10px;\r\n    flex-wrap: wrap;\r\n}\r\n\r\n.tag {\r\n    padding: 5px 10px;\r\n    border-radius: 63px;\r\n    font-size: 12px;\r\n    color: white;\r\n}\r\n\r\n#reset-btn {\r\n    margin-top: 20px;\r\n    padding: 8px 15px;\r\n    border: none;\r\n    background: #ef4444;\r\n    color: white;\r\n    border-radius: 8px;\r\n    cursor: pointer;\r\n}"
+  },
+  "script": {
+    "language": "javascript",
+    "content": "const gameArea = document.getElementById('game-area');\r\nconst scoreDisplay = document.getElementById('score');\r\nconst resetBtn = document.getElementById('reset-btn');\r\n\r\n// Load skor dari LocalStorage\r\nlet score = parseInt(localStorage.getItem('totalPahala')) || 0;\r\nscoreDisplay.innerText = score;\r\n\r\n// Senarai Item Ibadah\r\nconst daftarPahala = [\r\n    { nama: \"Alhamdulillah\", tipe: \"zikir\", poin: 10 },\r\n    { nama: \"Subhanallah\", tipe: \"zikir\", poin: 10 },\r\n    { nama: \"Allahu Akbar\", tipe: \"zikir\", poin: 10 },\r\n    { nama: \"Astaghfirullah\", tipe: \"zikir\", poin: 10 },\r\n    { nama: \"Solat Fardhu\", tipe: \"solat\", poin: 100 },\r\n    { nama: \"Solat Sunat\", tipe: \"solat\", poin: 50 },\r\n    { nama: \"Solat Berjamaah\", tipe: \"solat\", poin: 120 },\r\n    { nama: \"Baca Al-Quran\", tipe: \"rare\", poin: 200 },\r\n    { nama: \"Puasa Sunnah\", tipe: \"rare\", poin: 300 },\r\n    { nama: \"Zakat & Sedekah\", tipe: \"rare\", poin: 400 }\r\n];\r\n\r\nfunction spawnItem() {\r\n    const data = daftarPahala[Math.floor(Math.random() * daftarPahala.length)];\r\n    \r\n    const item = document.createElement('div');\r\n    item.className = `item ${data.tipe}`;\r\n    item.innerHTML = `<span>${data.nama}</span>`;\r\n\r\n    // Posisi rawak\r\n    const maxX = gameArea.clientWidth - 150;\r\n    const maxY = gameArea.clientHeight - 60;\r\n    item.style.left = Math.random() * maxX + \"px\";\r\n    item.style.top = Math.random() * maxY + \"px\";\r\n\r\n    // Klik untuk dapat pahala\r\n    item.onclick = () => {\r\n        score += data.poin;\r\n        scoreDisplay.innerText = score;\r\n        localStorage.setItem('totalPahala', score);\r\n        \r\n        // Kesan visual ringkas semasa klik\r\n        item.style.transform = \"scale(1.5)\";\r\n        item.style.opacity = \"0\";\r\n        setTimeout(() => item.remove(), 100);\r\n    };\r\n\r\n    gameArea.appendChild(item);\r\n\r\n    // Item hilang sendiri jika tidak diklik dalam 2.5 saat\r\n    setTimeout(() => {\r\n        if (item.parentElement) item.remove();\r\n    }, 59000);\r\n}\r\n\r\n// Reset Game\r\nresetBtn.onclick = () => {\r\n    if(confirm(\"Adakah anda mahu reset semua pahala?\")) {\r\n        score = 0;\r\n        scoreDisplay.innerText = score;\r\n        localStorage.setItem('totalPahala', 0);\r\n    }\r\n};\r\n\r\n// Kelajuan kemunculan item (1000 = 1 saat)\r\nsetInterval(spawnItem, 2000);"
+  },
+  "stylesheets": [],
+  "scripts": [],
+  "cssPreset": "",
+  "processors": [],
+  "customSettings": {},
+  "imports": {},
+  "types": {},
+  "tests": {
+    "language": "typescript",
+    "content": ""
+  },
+  "version": "48"
+}

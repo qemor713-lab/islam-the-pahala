@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0fdf4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 96vh;
+    overflow: hidden;
+}
+
+.game-container {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+.header {
+    background: white;
+    padding: 2px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    margin-bottom: 15px;
+}
+
+.score-board {
+    font-size: 25px;
+    font-weight: bold;
+    color: #16a34a;
+}
+
+#game-area {
+    width: 100%;
+    height: 400px;
+    background: #ffffff;
+    border-radius: 23px;
+    position: relative;
+    border: 4px solid #bbf7d0;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
+    cursor: pointer;
+}
+
+/* Gaya Asas Item */
+.item {
+    position: absolute;
+    padding: 12px 18px;
+    border-radius: 50px;
+    font-weight: bold;
+    color: white;
+    user-select: none;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.item:active { transform: scale(0.8); }
+
+/* Warna Mengikut Kategori */
+.zikir { background: #4caf50; border: 2px solid #2e7d32; }
+
+.solat { background: #1b5e20; border: 2px solid #ffd700; }
+
+.rare { 
+    background: linear-gradient(135deg, #8b5cf6, #d946ef); 
+    border: 2px solid #fff;
+    box-shadow: 0 0 15px rgba(217, 70, 239, 0.5);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.legend {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    padding: 5px 10px;
+    border-radius: 63px;
+    font-size: 12px;
+    color: white;
+}
+
+#reset-btn {
+    margin-top: 20px;
+    padding: 8px 15px;
+    border: none;
+    background: #ef4444;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
