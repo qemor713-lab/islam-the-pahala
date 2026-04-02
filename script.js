@@ -53,4 +53,4 @@ function spawnItem() {
     }, 5900);
 }
 
-setInterval(spawnItem, 3000);
+setInterval(spawnItem, 2000);
