@@ -50,17 +50,7 @@ function spawnItem() {
     // Item hilang sendiri jika tidak diklik dalam 2.5 saat
     setTimeout(() => {
         if (item.parentElement) item.remove();
-    }, 59000);
+    }, 5900);
 }
 
-// Reset Game
-resetBtn.onclick = () => {
-    if(confirm("Adakah anda mahu reset semua pahala?")) {
-        score = 0;
-        scoreDisplay.innerText = score;
-        localStorage.setItem('totalPahala', 0);
-    }
-};
-
-// Kelajuan kemunculan item (1000 = 1 saat)
-setInterval(spawnItem, 2000);
+setInterval(spawnItem, 3000);
