@@ -17,7 +17,12 @@ const daftarPahala = [
     { nama: "Solat Berjamaah", tipe: "solat", poin: 120 },
     { nama: "Baca Al-Quran", tipe: "rare", poin: 200 },
     { nama: "Puasa Sunnah", tipe: "rare", poin: 300 },
-    { nama: "Zakat & Sedekah", tipe: "rare", poin: 400 }
+    { nama: "Zakat & Sedekah", tipe: "rare", poin: 400 },
+      // system item
+    { nama: "islam", tipe: "agama", poin: 99221 },
+    { nama: "Allah", tipe: "agama", poin: 10000000 },
+      // New system
+    { nama: "Allah swt", tipe: "tuhan", poin: 34500000 },
 ];
 
 function spawnItem() {

@@ -62,6 +62,10 @@ body {
 
 .solat { background: #1b5e20; border: 2px solid #ffd700; }
 
+.agama { background: blue; border: 3px solid blueviolet; }
+
+.tuhan { background: tomato; border: 5px solid teal; }
+
 .rare { 
     background: linear-gradient(135deg, #8b5cf6, #d946ef); 
     border: 2px solid #fff;
@@ -88,4 +92,20 @@ body {
     border-radius: 20px;
     font-size: 14px;
     color: white;
+}
+
+.item.agama { 
+    background: gold !important; 
+    border: 3px solid orange !important;
+    color: black !important;
+    font-weight: bold;
+    box-shadow: 0 0 20px yellow;
+}
+
+.item.tuhan {
+  background: thistle !important;
+  border: 6px solid thistle !important;
+  color: black !important;
+  font-weight: bold;
+  box-shadow: 0 0 30px tomato;
 }
