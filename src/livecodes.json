@@ -4,10 +4,10 @@
   "head": "<meta charset=\"UTF-8\" />\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
   "htmlAttrs": "lang=\"en\" class=\"\"",
   "tags": [],
-  "activeEditor": "script",
+  "activeEditor": "markup",
   "markup": {
     "language": "html",
-    "content": "<!DOCTYPE html>\n<html lang=\"ms\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Game Cari Pahala Terkumpul</title>\n    <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n\n    <div class=\"game-container\">\n        <div class=\"header\">\n            <h1>✨ Kutip Pahala ✨</h1>\n            <div class=\"score-board\">Total Pahala: <span id=\"score\">0</span></div>\n        </div>\n\n        <div id=\"game-area\">\n            </div>\n        \n        <div class=\"legend\">\n            <span class=\"tag zikir\">📿 Zikir (+10)</span>\n            <span class=\"tag solat\">🕋 Solat (+100)</span>\n            <span class=\"tag rare\">📖 Ibadah Besar (+200-400)</span>\n        </div>\n    </div>\n\n    <script src=\"script.js\"></script>\n</body>\n</html>"
+    "content": "<!DOCTYPE html>\n<html lang=\"ms\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Game Cari Pahala Terkumpul</title>\n    <link rel=\"stylesheet\" href=\"style.css\">\n    <link rel=\"icon\" type=\"islampahala.png\" href=\"logo-pahala.png\">\n</head>\n<body>\n\n    <div class=\"game-container\">\n        <div class=\"header\">\n            <h1>✨ Kutip Pahala ✨</h1>\n            <div class=\"score-board\">Total Pahala: <span id=\"score\">0</span></div>\n        </div>\n\n        <div id=\"game-area\">\n            </div>\n        \n        <div class=\"legend\">\n            <span class=\"tag zikir\">📿 Zikir (+10)</span>\n            <span class=\"tag solat\">🕋 Solat (+100)</span>\n            <span class=\"tag rare\">📖 Ibadah Besar (+200-400)</span>\n        </div>\n    </div>\n\n    <script src=\"script.js\"></script>\n</body>\n</html>"
   },
   "style": {
     "language": "css",
